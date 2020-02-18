@@ -14,9 +14,7 @@ RSpec.describe User, type: :model do
 
   it 'must have a unique email' do
     user1 = User.new(name: 'Foobar', email: 'test@bar.com', password: 'foobar')
-    if user1.valid?
-      user1.save
-    end
+    user1.save if user1.valid?
     user2 = User.new(name: 'Foobar', email: 'test@bar.com', password: 'foobar')
     expect(user2.valid?).to be false
   end
