@@ -15,3 +15,15 @@
                password:              password,
                password_confirmation: password)
 end
+
+p ' Users successfully created'
+
+10.times do
+  a = Faker::Number.within(range: 1..10)
+  b = Faker::Number.within(range: 1..10)
+  s = Faker::Boolean.boolean(true_ratio: 1.0)
+  Friendship.create!(friend_id: a, friended_id:b, status:s)
+end
+
+p 'Friendships have been created'
+p 'Completed Successfuly'
