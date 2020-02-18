@@ -16,8 +16,6 @@ RSpec.describe User, type: :model do
     user1 = User.new(name: 'Foobar', email: 'test@bar.com', password: 'foobar')
     if user1.valid?
       user1.save
-    else
-      user1 = User.find_by(email: 'test@bar.com')
     end
     user2 = User.new(name: 'Foobar', email: 'test@bar.com', password: 'foobar')
     expect(user2.valid?).to be false

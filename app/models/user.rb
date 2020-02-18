@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :inverse_friendships, foreign_key: 'friended', class_name: 'Friendship', dependent: :destroy
 
   def friends
-    friends_arr = friendships.map{ |x| x.friended if x.status }
+    friends_arr = friendships.map { |x| x.friended if x.status }
     friends_arr += inverse_friendships.map { |x| x.friend if x.status }
     friends_arr.compact
   end
