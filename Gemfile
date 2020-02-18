@@ -41,7 +41,7 @@ gem 'faker'
 # For changing the url's
 gem 'friendly_id', '~> 5.2.4'
 # For creating multiple pages (e.g, 30 users per page)
-gem 'will_paginate',           '3.1.7'
+gem 'will_paginate'
 # Bootstrap for paginate
 gem 'bootstrap-will_paginate', '1.0.0'
 
@@ -59,10 +59,7 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-end
-
-group :test do
-  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
