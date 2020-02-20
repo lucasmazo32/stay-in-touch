@@ -1,5 +1,12 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %><%= send_invite(params[:id]) %></h2>
+  <h2>
+    <%= "Name: #{@user.name}" %>
+  </h2>
+  <% if current_user.invitation_received(@user) %>
+    <%= " sent you a friend request: " %>
+    <%= link_to 'Accept', user_path(user, params: { friendship: 'accept', user_id: user.id }), method: :post, class: 'btn btn-secundary' %>
+  <% end %>
+  <%= send_invite(params[:id]) %>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
