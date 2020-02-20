@@ -20,9 +20,9 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    id_array = current_user.friends.map(&:id)
+    id_array = current_user.friends.map(&:friended_id)
     id_array << current_user.id
-    @timeline_posts ||= Post.where(user_id: id_array).order(created_at: :desc)
+    @timeline_posts = Post.where(user_id: id_array).order(created_at: :desc)
   end
 
   def post_params

@@ -1,6 +1,5 @@
 module FriendshipsHelper
   def send_invite(user_id)
-    # user = User.friendly.find(params[:id])
     user = User.find(user_id)
     return unless current_user != user
 
@@ -19,22 +18,13 @@ module FriendshipsHelper
     end
   end
 
-  def delete_friendship(user)
-    fri = current_user.friendships.find_by(friended: user)
-    if fri.nil?
-      current_user.inverse_friendships.find_by(friend: user).delete
-    else
-      fri.delete
-    end
-  end
-
   def create_logic(parameters, user)
     case parameters
     when 'cancel_request'
       current_user.friendships.find_by(friended: user).delete
       flash[:notice] = 'Friend request canceled'
     when 'unfriend'
-      delete_friendship(user)
+      current_user.delete_friendship(user)
       flash[:notice] = "#{user.name} is not longer your friend"
     when 'accept'
       a_friend = current_user.inverse_friendships.find_by(friend: user)
