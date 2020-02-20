@@ -26,6 +26,24 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# To encrypt the passwords or remember tokens
+gem 'bcrypt'
+# For using scss files better?
+gem 'sassc'
+# For bootstrap
+gem 'bootstrap', '~> 4.4.1'
+# For seeing the tables generated in the rails console
+gem 'hirb'
+# For jqueries on rails
+gem 'jquery-rails'
+# for creating new users
+gem 'faker'
+# For changing the url's
+gem 'friendly_id', '~> 5.2.4'
+# For creating multiple pages (e.g, 30 users per page)
+gem 'will_paginate'
+# Bootstrap for paginate
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -41,10 +59,8 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-end
-
-group :test do
-  gem 'rspec'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do

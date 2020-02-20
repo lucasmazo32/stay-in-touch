@@ -5,6 +5,11 @@
         Name: <%= user.name %>
         <span class="profile-link">
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+          <% if current_user.invitation_received(user) %>
+            <%= " sent you a friend request: " %>
+            <%= link_to 'Accept', user_path(user, params: { friendship: 'accept', user_id: user.id }), method: :post, class: 'btn btn-secundary' %>
+          <% end %>
+          <%= send_invite(user.id) %>
         </span>
       </li>
     <% end %>

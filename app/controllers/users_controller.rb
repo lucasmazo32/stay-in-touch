@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # @user = User.friendly.find(params[:id])
     @user = User.find(params[:id])
     @posts = @user.posts.ordered_by_most_recent
   end

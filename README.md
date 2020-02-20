@@ -1,4 +1,4 @@
-# Scaffold for social media app with Ruby on Rails
+# Stay in touch: Ruby on Rails project
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
@@ -24,7 +24,20 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Setup postres psql
+```
+sudo -u postgres psql
+```
+Create user with a password
+```
+create user username with password 'foobar';
+```
+Become a super user for the database
+```
+alter user username with superuser;
+```
+
+Install gems with:
 
 ```
 bundle install
@@ -33,8 +46,10 @@ bundle install
 Setup database with:
 
 ```
+   rails db:drop
    rails db:create
    rails db:migrate
+   rails db:seed
 ```
 
 
@@ -63,7 +78,9 @@ TBA
 
 ## Authors
 
-TBA
+
+- Kyankya Raymond: [Github](https://github.com/rkyankya)
+- Lucas Mazo: [Github](https://github.com/lucasmazo32)
 
 ## 🤝 Contributing
 
@@ -81,5 +98,5 @@ TBA
 
 ## 📝 License
 
-TBA
+MIT
 
