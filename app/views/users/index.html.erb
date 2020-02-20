@@ -9,7 +9,7 @@
             <%= " sent you a friend request: " %>
             <%= link_to 'Accept', user_path(user, params: { friendship: 'accept', user_id: user.id }), method: :post, class: 'btn btn-secundary' %>
           <% end %>
-          <%= send_invite(user.id) %>
+          <%= send_invite(user) %>
         </span>
       </li>
     <% end %>

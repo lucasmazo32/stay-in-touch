@@ -10,6 +10,9 @@ p 'Database to be created'
 
 20.times do |n|
   name = Faker::Name.first_name + ' ' + Faker::Name.last_name
+  if name.length >= 20
+    name = Faker::Name.first_name + ' ' + Faker::Name.last_name while name.length >= 20
+  end
   email = "foo#{n+1}@bar.com"
   password = "foobar"
   User.create!(name:  name,
@@ -21,7 +24,7 @@ p 'Users successfully created'
 
 20.times do
   user = Faker::Number.within(range: 1..20)
-  quote = Faker::Quote.matz 
+  quote = Faker::Quote.matz
   Post.create!(user_id: user,
                content: quote)
 end
@@ -68,12 +71,13 @@ Friendship.create!(friend_id: 10, friended_id: 19, status: Faker::Boolean.boolea
 
 p 'Friendships have been created'
 
-10.times do |n|
-  post = Faker::Number.within(range: 1..20)
-  user = Faker::Number.within(range: 1..20)
-  Like.create!(post_id: post,
-               user_id: user
+20.times do |n|
+  post_id = Faker::Number.within(range: 1..20)
+  user_id = Faker::Number.within(range: 1..20)
+  like = Like.new(post_id: post_id,
+               user_id: user_id
   )
+  like.save if like.valid?
 end
 
 p 'Likes successfully created'

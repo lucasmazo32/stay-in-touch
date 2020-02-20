@@ -17,6 +17,17 @@ RSpec.describe Friendship, type: :model do
       expect(friendship.save).to be true
       friendship.save
       expect(friendship.status).to be false
+      friendship.status = true
+      friendship.save
+      expect(friendship.status).to be true
+      reverse_friendship = user2.friendships.find_by(friended: user1)
+      expect(reverse_friendship).to_not be nil
+      expect(reverse_friendship.status).to be true
+      user1.delete_friendship(user2)
+      reverse_friendship = user2.friendships.find_by(friended: user1)
+      friendship = user1.friendships.find_by(friended: user2)
+      expect(friendship).to be nil
+      expect(reverse_friendship).to be nil
     end
   end
 end
