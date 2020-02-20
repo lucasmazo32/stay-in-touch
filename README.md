@@ -1,15 +1,17 @@
 # Stay in touch: Ruby on Rails project
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This project was created as part of our curriculum in Microverse. The friends relations and how they interact together was the main goal.
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 
-## Live Demo
+## Deployment
 
-TBA
+> [Stay in touch](https://aqueous-ocean-76424.herokuapp.com/)
+
+- Mock users credentials go from foo1@bar.com to foo20@bar.com, and the password for all of them is foobar.
 
 
 ## Getting Started
@@ -72,10 +74,6 @@ Open `http://localhost:3000/` in your browser.
 
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
-### Deployment
-
-TBA
-
 ## Authors
 
 
@@ -91,10 +89,6 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-TBA
 
 ## 📝 License
 
