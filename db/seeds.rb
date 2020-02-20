@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+p 'Database to be created'
+
 10.times do |n|
   name  = Faker::Name.name
   email = "foo#{n+1}@bar.com"
   password = "foobar"
+  image = Faker::Avatar.image
   User.create!(name:  name,
+               gravatar_url: image,
                email: email,
                password:              password,
                password_confirmation: password)
