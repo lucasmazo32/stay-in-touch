@@ -1,5 +1,6 @@
 module FriendshipsHelper
   def send_invite(user_id)
+    # user = User.friendly.find(params[:id])
     user = User.find(user_id)
     return unless current_user != user
 
